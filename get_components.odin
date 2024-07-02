@@ -59,11 +59,85 @@ get_components_5 :: proc(
 	return a, b, c, d, e, {}
 }
 
+get_components_6 :: proc(
+	w: ^World,
+	entity: Entity,
+	$A, $B, $C, $D, $E, $F: typeid,
+) -> (
+	^A,
+	^B,
+	^C,
+	^D,
+	^E,
+	^F,
+	[6]Error,
+) {
+	a, err1 := get_component(w, entity, A)
+	b, err2 := get_component(w, entity, B)
+	c, err3 := get_component(w, entity, C)
+	d, err4 := get_component(w, entity, D)
+	e, err5 := get_component(w, entity, E)
+	f, err6 := get_component(w, entity, F)
+	return a, b, c, d, e, f, {}
+}
+
+get_components_7 :: proc(
+	w: ^World,
+	entity: Entity,
+	$A, $B, $C, $D, $E, $F, $G: typeid,
+) -> (
+	^A,
+	^B,
+	^C,
+	^D,
+	^E,
+	^F,
+	^G,
+	[7]Error,
+) {
+	a, err1 := get_component(w, entity, A)
+	b, err2 := get_component(w, entity, B)
+	c, err3 := get_component(w, entity, C)
+	d, err4 := get_component(w, entity, D)
+	e, err5 := get_component(w, entity, E)
+	f, err6 := get_component(w, entity, F)
+	g, err7 := get_component(w, entity, G)
+	return a, b, c, d, e, f, g, {}
+}
+
+get_components_8 :: proc(
+	w: ^World,
+	entity: Entity,
+	$A, $B, $C, $D, $E, $F, $G, $H: typeid,
+) -> (
+	^A,
+	^B,
+	^C,
+	^D,
+	^E,
+	^F,
+	^G,
+	^H,
+	[8]Error,
+) {
+	a, err1 := get_component(w, entity, A)
+	b, err2 := get_component(w, entity, B)
+	c, err3 := get_component(w, entity, C)
+	d, err4 := get_component(w, entity, D)
+	e, err5 := get_component(w, entity, E)
+	f, err6 := get_component(w, entity, F)
+	g, err7 := get_component(w, entity, G)
+	h, err8 := get_component(w, entity, H)
+	return a, b, c, d, e, f, g, h, {}
+}
 get_components :: proc {
 	get_components_2,
 	get_components_3,
 	get_components_4,
 	get_components_5,
+	get_components_6,
+	get_components_7,
+	get_components_8,
 }
 
 get_component_slice_from_entities :: proc(
