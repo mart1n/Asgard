@@ -1,9 +1,9 @@
 package sparse_set
 
 import "base:builtin"
+import "base:runtime"
 import "core:fmt"
 import "core:mem"
-import "core:runtime"
 import "core:slice"
 
 Entity :: distinct uint

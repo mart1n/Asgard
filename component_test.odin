@@ -18,14 +18,6 @@ test_register_component :: proc(t: ^testing.T) {
 
 	e := register_component(&w, Position)
 	testing.expect(t, e == .NO_ERROR, "Register Component returned an Error value")
-
-	//e1 := create_entity(&w)
-	//e2 := create_entity(&w)
-
-	//testing.expect(test, int(e1) == 1, "Unexpected entity value")
-	//testing.expect(test, int(e2) == 2, "Unexpected entity value")
-
-
 }
 
 @(test)

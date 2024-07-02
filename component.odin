@@ -1,7 +1,7 @@
 package asgard
 
+import "base:runtime"
 import "core:container/queue"
-import "core:runtime"
 import "core:slice"
 import ss "sparse_set"
 

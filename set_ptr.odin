@@ -26,6 +26,12 @@ make_setptr :: proc($T: typeid, p: rawptr) -> Setptr {
 		return s.entities
 	}
 
+	deinit :: proc(data: rawptr) {
+		s := cast(^T)data
+		ss.destroy(s)
+	}
+
+
 	return(
 		Setptr {
 			ptr = p,
@@ -33,6 +39,7 @@ make_setptr :: proc($T: typeid, p: rawptr) -> Setptr {
 			size = size,
 			contains = contains,
 			entities = entities,
+			deinit = deinit,
 		} \
 	)
 }

@@ -187,6 +187,7 @@ test_get_entities_with_components :: proc(t: ^testing.T) {
 	v3, _ := add_component(&w, e3, Velocity(28))
 
 	el := get_entities_with_components(&w, []typeid{Position, Health, Velocity})
+	defer delete(el)
 	fmt.printf("Entities: %v\n", el)
 	testing.expect(t, len(el) == 2, "Unexpected number of enittes returned")
 }

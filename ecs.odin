@@ -1,7 +1,7 @@
 package asgard
 
+import "base:runtime"
 import "core:container/queue"
-import "core:runtime"
 import ss "sparse_set"
 
 Error :: enum {
@@ -33,6 +33,7 @@ Setptr :: struct {
 	size:          proc(data: rawptr) -> int,
 	contains:      proc(data: rawptr, entity: Entity) -> bool,
 	entities:      proc(data: rawptr) -> [dynamic]Entity,
+	deinit:        proc(data: rawptr),
 }
 
 World :: struct {
@@ -69,6 +70,7 @@ deinit :: proc(w: ^World) {
 
 	deinit_component_map :: proc(w: ^World) {
 		for key, value in w.component_map {
+			value.deinit(value.ptr) // clean up the sparse set
 			free(value.ptr)
 		}
 
